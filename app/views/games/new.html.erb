@@ -1,0 +1,12 @@
+<h1>Welcome to the longest word-game! </h1>
+<h2>What is the longest word you can find ?</h2>
+<%=@letters%>
+<div class="answer">
+    <div class="form-group col-md-10">
+    <form action="/score" method="POST" data-turbo="false">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letters %>      <!-- <label for="try">your best shot</label> -->
+      <input type="text" class="form-control input-lg" name="word" id="try" placeholder="Boyaah?">
+      <button type="submit" class="btn btn-primary btn-lg col-md-2">Play</button>
+    </form>
+    </div>
